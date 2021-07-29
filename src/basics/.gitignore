@@ -1,5 +1,8 @@
 ckpt
 path
 tb
-checkpoint
+*checkpoint*
 weights*
+logs
+exname_of_file
+the_saved_model
