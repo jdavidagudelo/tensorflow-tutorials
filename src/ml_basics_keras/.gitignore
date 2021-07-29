@@ -10,6 +10,10 @@ my_model.h5
 my_dir
 
 path_to_my_model
-mymodel_1
-mymodel_2
-ckpt
+mymodel*
+my_model*
+*ckpt*
+
+checkpoint
+custom_layer*
+*.h5
