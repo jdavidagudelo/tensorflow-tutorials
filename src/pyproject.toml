@@ -8,3 +8,12 @@ authors = []
 [tool.poetry.dependencies]
 python = "^3.9.5"
 tensorflow = "^2.5.0"
+jupyter = "^1.0.0"
+
+[tool.poetry.dev-dependencies]
+ipython = "^7"
+black = "^21.7b0"
+pylint = "^2.9"
+ipdb = "^0.13"
+flake8 = "^3.9"
+isort = "^5.9"
