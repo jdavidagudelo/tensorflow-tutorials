@@ -20,6 +20,7 @@ imageio = "^2.9.0"
 tensorflow-probability = "^0.13.0"
 tensorflow-recommenders = "^0.5.2"
 scann = "^1.2.2"
+tf-models-official = "^2.5.1"
 
 [tool.poetry.dev-dependencies]
 ipython = "^7"
