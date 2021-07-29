@@ -8,3 +8,8 @@ training_1
 training_2
 my_model.h5
 my_dir
+
+path_to_my_model
+mymodel_1
+mymodel_2
+ckpt

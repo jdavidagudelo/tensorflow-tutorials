@@ -3,3 +3,5 @@ metadata.tsv
 vectors.tsv
 aclImdb_v1.tar.gz.tar.gz
 aclImdb
+pt_vocab.txt
+vocab.txt
