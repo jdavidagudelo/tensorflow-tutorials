@@ -1,6 +1,6 @@
 [[package]]
 name = "absl-py"
-version = "0.12.0"
+version = "0.13.0"
 description = "Abseil Python Common Libraries, see https://github.com/abseil/abseil-py."
 category = "main"
 optional = false
@@ -1290,6 +1290,18 @@ python-versions = ">=3.5, <4"
 pyasn1 = ">=0.1.3"
 
 [[package]]
+name = "scann"
+version = "1.2.2"
+description = "Scalable Approximate Nearest Neighbor search library"
+category = "main"
+optional = false
+python-versions = "*"
+
+[package.dependencies]
+numpy = "*"
+tensorflow = ">=2.5.0,<2.6.0"
+
+[[package]]
 name = "scikit-learn"
 version = "0.24.2"
 description = "A set of python modules for machine learning and data mining"
@@ -1506,16 +1518,15 @@ make_nearest_neighbour_index = ["apache-beam", "annoy"]
 
 [[package]]
 name = "tensorflow-metadata"
-version = "1.2.0"
+version = "0.22.2"
 description = "Library and standards for schema and statistics."
 category = "main"
 optional = false
-python-versions = ">=3.6,<4"
+python-versions = ">=2.7,<4"
 
 [package.dependencies]
-absl-py = ">=0.9,<0.13"
-googleapis-common-protos = ">=1.52.0,<2"
-protobuf = ">=3.13,<4"
+googleapis-common-protos = "*"
+protobuf = ">=3.7,<4"
 
 [[package]]
 name = "tensorflow-probability"
@@ -1536,6 +1547,21 @@ six = ">=1.10.0"
 [package.extras]
 jax = ["jax", "jaxlib"]
 tfds = ["tensorflow-datasets (>=2.2.0)"]
+
+[[package]]
+name = "tensorflow-recommenders"
+version = "0.5.2"
+description = "Tensorflow Recommenders, a TensorFlow library for recommender systems."
+category = "main"
+optional = false
+python-versions = "*"
+
+[package.dependencies]
+absl-py = ">=0.1.6"
+tensorflow = ">=2.3.0"
+
+[package.extras]
+docs = ["fire", "annoy", "scann (>=1.2.0,<1.3.0)"]
 
 [[package]]
 name = "tensorflow-text"
@@ -1720,12 +1746,12 @@ python-versions = "*"
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.9.5"
-content-hash = "d49e1297577f3fb09d4be10ac82f990294b57bb2cd7437756746eb848cd6dc49"
+content-hash = "ac827177c3022af1db74591111aa7a9d7f16221160aaf901fd2ea235e7d3833b"
 
 [metadata.files]
 absl-py = [
-    {file = "absl-py-0.12.0.tar.gz", hash = "sha256:b44f68984a5ceb2607d135a615999b93924c771238a63920d17d3387b0d229d5"},
-    {file = "absl_py-0.12.0-py3-none-any.whl", hash = "sha256:afe94e3c751ff81aad55d33ab6e630390da32780110b5af72ae81ecff8418d9e"},
+    {file = "absl-py-0.13.0.tar.gz", hash = "sha256:6953272383486044699fd0e9f00aad167a27e08ce19aae66c6c4b10e7e767793"},
+    {file = "absl_py-0.13.0-py3-none-any.whl", hash = "sha256:62bd4e248ddb19d81aec8f9446b407ff37c8175c2ba88266a7afa9b4ce4a333b"},
 ]
 appdirs = [
     {file = "appdirs-1.4.4-py2.py3-none-any.whl", hash = "sha256:a841dacd6b99318a741b166adb07e19ee71a274450e68237b4650ca1055ab128"},
@@ -2656,6 +2682,12 @@ rsa = [
     {file = "rsa-4.7.2-py3-none-any.whl", hash = "sha256:78f9a9bf4e7be0c5ded4583326e7461e3a3c5aae24073648b4bdfa797d78c9d2"},
     {file = "rsa-4.7.2.tar.gz", hash = "sha256:9d689e6ca1b3038bc82bf8d23e944b6b6037bc02301a574935b2dd946e0353b9"},
 ]
+scann = [
+    {file = "scann-1.2.2-cp36-cp36m-manylinux2014_x86_64.whl", hash = "sha256:fd2ddae35decd98987c08e22e335bf69165c4a4352ced0b4977cc862b9c4643f"},
+    {file = "scann-1.2.2-cp37-cp37m-manylinux2014_x86_64.whl", hash = "sha256:4e95f46bc8dd09d3557e166ebf9e1b031387d01b4718a7b8636fd3ca1d7c1429"},
+    {file = "scann-1.2.2-cp38-cp38-manylinux2014_x86_64.whl", hash = "sha256:e5c2afcbc02944002dbd2c5bd27e8c64c6a47612f6796622500dddd507ddcfb6"},
+    {file = "scann-1.2.2-cp39-cp39-manylinux2014_x86_64.whl", hash = "sha256:bc94fc286036701e2b1973a09917b8c5357e49d654c57158f8f8017aea02a0d4"},
+]
 scikit-learn = [
     {file = "scikit-learn-0.24.2.tar.gz", hash = "sha256:d14701a12417930392cd3898e9646cf5670c190b933625ebe7511b1f7d7b8736"},
     {file = "scikit_learn-0.24.2-cp36-cp36m-macosx_10_13_x86_64.whl", hash = "sha256:d5bf9c863ba4717b3917b5227463ee06860fc43931dc9026747de416c0a10fee"},
@@ -2763,10 +2795,14 @@ tensorflow-hub = [
     {file = "tensorflow_hub-0.12.0-py2.py3-none-any.whl", hash = "sha256:822fe5f7338c95efcc3a534011c6689e4309ba2459def87194179c4de8a6e1fc"},
 ]
 tensorflow-metadata = [
-    {file = "tensorflow_metadata-1.2.0-py3-none-any.whl", hash = "sha256:5aa2db453866f0c5f8dcadb8b81d67b10ba2f6c29417fd131455e59de435aa7e"},
+    {file = "tensorflow_metadata-0.22.2-py2.py3-none-any.whl", hash = "sha256:f9ffde743dd61f775f35872e79c4eefecbc539a8870e57b20359dc74726f06eb"},
 ]
 tensorflow-probability = [
     {file = "tensorflow_probability-0.13.0-py2.py3-none-any.whl", hash = "sha256:308c05998731d0de077a81f4537bef34523cab406fdae09e3e11854d45a075bb"},
+]
+tensorflow-recommenders = [
+    {file = "tensorflow-recommenders-0.5.2.tar.gz", hash = "sha256:3d21988308163a1dedc258f665ddb64cdf2c99cd143fa558cb1730c4c47b45d3"},
+    {file = "tensorflow_recommenders-0.5.2-py3-none-any.whl", hash = "sha256:5e63ec6b4689590a33818cf9682f82175be9f05e66b9d929946fed3ef54c513d"},
 ]
 tensorflow-text = [
     {file = "tensorflow_text-2.5.0-cp36-cp36m-macosx_10_9_x86_64.whl", hash = "sha256:cca283ef8cba1e604c0c3b5429190fc92f6fb424ffa0e139665fc160f99dc32b"},
