@@ -1,0 +1,10 @@
+[tool.poetry]
+name = "tensorflow-tutorial"
+version = "0.0.1"
+description = "Tensorflow tutorials"
+authors = []
+
+
+[tool.poetry.dependencies]
+python = "^3.9.5"
+tensorflow = "^2.5.0"
