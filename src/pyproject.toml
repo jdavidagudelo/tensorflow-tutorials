@@ -9,6 +9,7 @@ authors = []
 python = "^3.9.5"
 tensorflow = "^2.5.0"
 jupyter = "^1.0.0"
+matplotlib = "^3.4.2"
 
 [tool.poetry.dev-dependencies]
 ipython = "^7"
